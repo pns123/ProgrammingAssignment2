@@ -3,13 +3,12 @@
 ##  Inverse of a square matrix is computed using solve function in R
 
 
-
 ## This function creates a special "matrix" object that can cache its inverse
 makeCacheMatrix <- function(x = matrix()) {
         s <- NULL
         set <- function(y) {
                 ##  If the matrix in the cache is not identical to the input matrix 
-                ##  then  resetting corresponding cached inverse matrix value to null(s <<-null)  
+                ##  then  resetting cached inverse matrix value to null(s <<-null)  
                 if(!identical(get(),y) ){
                         x <<- y
                         s <<- NULL
@@ -26,7 +25,7 @@ makeCacheMatrix <- function(x = matrix()) {
 
 ## CacheSolve function computes the inverse of the special "matrix" returned by makeCacheMatrix above.
 ## If the inverse has already been calculated (and the matrix has not changed), 
-## then the cachesolve should retrieve the inverse from the cache.
+## then cachesolve should retrieve the inverse from the cache.
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
